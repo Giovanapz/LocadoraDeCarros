@@ -13,7 +13,7 @@ public class Main {
 
         int opcao;
 
-        do {
+        do {//Menu principal
             System.out.println("Locadora de Carros\n");
             System.out.println("1 - Cliente");
             System.out.println("2 - Carro");
@@ -42,7 +42,7 @@ public class Main {
         boolean existe;
         int opcao;
 
-        do {
+        do {//Menu cliente
             System.out.println("Cliente\n");
             System.out.println("1 - Cadastrar");
             System.out.println("2 - Consultar");
@@ -84,7 +84,7 @@ public class Main {
                         
                         break;
 
-                    case 3:
+                    case 3://Alterar
                         System.out.println("Digite o CPF para alteracao: ");
                         cpf = scan.next();
                         clearBuffer(scan);
@@ -97,7 +97,7 @@ public class Main {
                         }
                         break;
                         
-                    case 4:
+                    case 4://Excluir
                         System.out.println("Digite o CPF para consulta: ");
                         cpf = scan.next();
                         clearBuffer(scan);
@@ -132,7 +132,7 @@ public class Main {
         int estado;
         int opcao;
 
-        do {
+        do {//Menu carro
             System.out.println("Carro\n");
             System.out.println("1 - Cadastrar");
             System.out.println("2 - Consultar");
@@ -186,7 +186,7 @@ public class Main {
                         }
                         break;
 
-                    case 3:
+                    case 3://Alterar
                         System.out.println("Digite a PLACA para alteracao: ");
                         placa = scan.next();
                         Carro carroAtt = carro.Consultar(placa);
@@ -198,7 +198,7 @@ public class Main {
                         }
                         break;
                         
-                    case 4:
+                    case 4://Excluir
                         System.out.println("Digite a PLACA para consulta: ");
                         placa = scan.next();
                         Carro carroRem = carro.Consultar(placa);
@@ -236,7 +236,7 @@ public class Main {
         String codigoLocacao;
         int opcao;
 
-        do {
+        do {//Menu locação
             System.out.println("Locação\n");
             System.out.println("1 - Retirada");
             System.out.println("2 - Devolução");
@@ -282,7 +282,7 @@ public class Main {
                         }
                         break;
  
-                    case 2://devolução
+                    case 2://Devolução
                         System.out.println("\nDigite o código de locação para fazer a devolução: ");
                         codigoLocacao = scan.next();
                         Locacao locacaoAux = locacao.Consultar(codigoLocacao);
@@ -306,7 +306,7 @@ public class Main {
                         }
                         break;
 
-                    case 3:
+                    case 3://Consulta
                         System.out.println("\nDigite o código de locação para consultar: ");
                         codigoLocacao = scan.next();
                         Locacao locacaoAtt = locacao.Consultar(codigoLocacao);
@@ -338,18 +338,14 @@ public class Main {
                 //CASO ESCOLHA O MENU DO CLIENTE
                 case 1:
                     opcao = CrudCliente();
-                    //FINALIZADO - IDEIA: BOOLEAN PARA SABER SE O CLIENTE ESTA COM ALGUM CARRO EM SUA POSSE, 
-                    //E NA CONSULTA APRESENTAR OS DADOS DO CLIENTE E CARRO TAMBÉM
                     break;
                 //CASO ESCOLHA O MENU DO CARRO
                 case 2:
                     opcao = CrudCarro();
-                    //DESENVOLVER AQUI AS FUNCIONALIDADES DO CRUDCARRO()
                     break;
-
+                //CASO ESCOLHA MENU DA LOCAÇÃO
                 case 3:
                     opcao = CrudLocacao();
-                    //DESENVOLVER AQUI AS FUNCIONALIDADES DO CRUDLOCACAO()
                     break;
             }
         } while (opCrud != 0);
